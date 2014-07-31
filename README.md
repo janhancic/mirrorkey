@@ -41,7 +41,7 @@ Works in [node.js](http://nodejs.org/) and in the browser.
 ## Installation
 Node, Browserify &  Webpack: `npm install mirrorkey`
 
-Bower: `bower install mirrorkey
+Bower: `bower install mirrorkey`
 
 Other: you can also just grap `mirrorkey_browser.js` or `mirrorkey_browser.min.js` and include them in your project 
 manually. A global `mirrorkey` will be available on the `window` object.
