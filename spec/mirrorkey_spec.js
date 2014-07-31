@@ -52,4 +52,15 @@ describe('MirrorKey', function() {
 
 		expect(result.MY_KEY1).toEqual('my_key1');
 	});
+
+	it('adds values in dashed', function() {
+		var result = mirrorKey(
+			{
+				MY_KEY1: null
+			},
+			'dashed'
+		);
+
+		expect(result.MY_KEY1).toEqual('MY-KEY1');
+	});
 });

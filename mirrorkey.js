@@ -21,6 +21,10 @@ var transforms = {
 
 	'lower-case': function(key) {
 		return key.toLowerCase();
+	},
+
+	'dashed': function(key) {
+		return key.replace(/_/g, '-');
 	}
 };
 
