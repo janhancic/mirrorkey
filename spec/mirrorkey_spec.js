@@ -9,6 +9,12 @@ describe('MirrorKey', function() {
 		}).toThrow(errorMsg);
 	});
 
+	it('throws an exception if transformType is unknown', function() {
+		expect(function() {
+			mirrorKey({}, '404-transform');
+		}).toThrow('Unknown value for transformType.');
+	});
+
 	it('returns an empty object if the argument is an empty object', function() {
 		var result = mirrorKey({});
 
@@ -23,5 +29,17 @@ describe('MirrorKey', function() {
 
 		expect(result.MY_KEY1).toEqual('MY_KEY1');
 		expect(result.MY_KEY2).toEqual('MY_KEY2');
+	});
+
+	it('adds values in camel case', function() {
+		var result = mirrorKey(
+			{
+				MY_KEY1: null
+			},
+			'camel-case'
+		);
+
+		expect(result.MY_KEY1).toEqual('MyKey1');
+		expect(result.MY_KEY2).toEqual('MyKey1');
 	});
 });
