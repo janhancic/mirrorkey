@@ -6,8 +6,32 @@ The idea came from [react/utils/keyMirror](https://github.com/facebook/react/blo
 added transforms which allows you to transform the values. There are 5 available transforms: `none`, `camel-case`, 
 `lower-case`, `dashed` & `lower-dashed`. You pass the transform in as the second argument (default is `none`),
 
+This utility is useful for creating maps of constants, as it helps you to avoid having to type the same thing twice.
+
 ## Examples
-TODO
+
+```javascript
+var myConstants = {
+	MY_FOO: null,
+	MY_BAR: null
+};
+
+mirrorKey(myConstants);
+/*
+{
+	MY_FOO: 'MY_FOO',
+	MY_BAR: 'MY_BAR'
+}
+*/
+
+mirrorKey(myConstants, 'lower-dashed');
+/*
+{
+	MY_FOO: 'my-foo',
+	MY_BAR: 'my-bar'
+}
+*/
+```
 
 ## Installation
 TODO
