@@ -40,8 +40,11 @@ Works in [node.js](http://nodejs.org/) and in the browser.
 
 ## Installation
 Node: `npm install mirrorkey`
+
 Bower: TODO
+
 Browserify: TODO
+
 Webpack: TODO
 
 ## Developing

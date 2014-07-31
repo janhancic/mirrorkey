@@ -1,7 +1,7 @@
 {
   "name": "mirrorkey",
   "version": "0.0.1",
-  "description": "Simple utility to create a object literal which has the same values for as the key names.",
+  "description": "Simple utility to create a object literal which has the same values as the key names.",
   "main": "mirrorkey.js",
   "scripts": {
     "test": "jasmine-node spec/"
