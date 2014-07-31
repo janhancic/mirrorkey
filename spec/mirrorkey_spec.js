@@ -31,7 +31,7 @@ describe('MirrorKey', function() {
 		expect(result.MY_KEY2).toEqual('MY_KEY2');
 	});
 
-	it('adds values in camel case', function() {
+	it('adds values in camel-case', function() {
 		var result = mirrorKey(
 			{
 				MY_KEY1: null
@@ -40,6 +40,5 @@ describe('MirrorKey', function() {
 		);
 
 		expect(result.MY_KEY1).toEqual('MyKey1');
-		expect(result.MY_KEY2).toEqual('MyKey1');
 	});
 });
