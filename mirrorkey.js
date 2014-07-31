@@ -17,6 +17,10 @@ var transforms = {
 		}
 
 		return parts.join("");
+	},
+
+	'lower-case': function(key) {
+		return key.toLowerCase();
 	}
 };
 

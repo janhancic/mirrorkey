@@ -41,4 +41,15 @@ describe('MirrorKey', function() {
 
 		expect(result.MY_KEY1).toEqual('MyKey1');
 	});
+
+	it('adds values in lower-case', function() {
+		var result = mirrorKey(
+			{
+				MY_KEY1: null
+			},
+			'lower-case'
+		);
+
+		expect(result.MY_KEY1).toEqual('my_key1');
+	});
 });
