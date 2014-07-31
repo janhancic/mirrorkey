@@ -39,13 +39,12 @@ Works in [node.js](http://nodejs.org/) and in the browser.
 *I haven't yet tested this in every browser, but it should work as I haven't used any >ES5 functions.*
 
 ## Installation
-Node: `npm install mirrorkey`
+Node, Browserify &  Webpack: `npm install mirrorkey`
 
 Bower: TODO
 
-Browserify: TODO
-
-Webpack: TODO
+Other: you can also just grap `mirrorkey_browser.js` or `mirrorkey_browser.min.js` and include them in your project 
+manually.
 
 ## Developing
 
