@@ -41,15 +41,18 @@ Works in [node.js](http://nodejs.org/) and in the browser.
 ## Installation
 Node, Browserify &  Webpack: `npm install mirrorkey`
 
-Bower: `bower install mirrorkey`
+Bower: `bower install mirrorkey
 
 Other: you can also just grap `mirrorkey_browser.js` or `mirrorkey_browser.min.js` and include them in your project 
-manually.
+manually. A global `mirrorkey` will be available on the `window` object.
 
 ## Developing
 
 Clone this repository. Source code is in `mirrorkey.js` and the tests are in `spec/`. To run the tests you will need to 
 install jasmine-node with `npm install jasmine-node -g`. After which you can run `npm test` to run the tests.
+
+If you wish to build a browser version then run `npm install` and then `grunt` which will generate the browser versions 
+for you.
 
 ## License
 See LICENSE file.
