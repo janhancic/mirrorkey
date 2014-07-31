@@ -15,7 +15,11 @@
     "key",
     "keys"
   ],
-  "author": "Jan Hancic TODO",
+  "author": {
+    "name": "Jan Hancic",
+    "email": "jan.hancic@gmail.com",
+    "url": "http://hancic.info"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/janhancic/mirrorkey/issues"
