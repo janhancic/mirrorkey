@@ -1,7 +1,7 @@
 'use strict';
 
 var transforms = {
-	none: function(key) {
+	'none': function(key) {
 		return key;
 	},
 
