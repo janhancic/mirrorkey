@@ -32,7 +32,10 @@ var transforms = {
 	}
 };
 
-var transformNames = Object.keys(transforms);
+var transformNames = [];
+for (var transformName in transforms) {
+	transformNames.push(transformName);
+}
 
 module.exports = function(obj, transformType) {
 	if (obj === null || typeof obj !== 'object') {
