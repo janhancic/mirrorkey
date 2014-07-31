@@ -63,4 +63,15 @@ describe('MirrorKey', function() {
 
 		expect(result.MY_KEY1).toEqual('MY-KEY1');
 	});
+
+	it('adds values in lower-dashed', function() {
+		var result = mirrorKey(
+			{
+				MY_KEY1: null
+			},
+			'lower-dashed'
+		);
+
+		expect(result.MY_KEY1).toEqual('my-key1');
+	});
 });

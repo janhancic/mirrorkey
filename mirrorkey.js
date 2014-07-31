@@ -25,6 +25,10 @@ var transforms = {
 
 	'dashed': function(key) {
 		return key.replace(/_/g, '-');
+	},
+
+	'lower-dashed': function(key) {
+		return this['lower-case'](this['dashed'](key));
 	}
 };
 
