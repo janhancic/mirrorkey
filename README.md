@@ -39,7 +39,10 @@ Works in [node.js](http://nodejs.org/) and in the browser.
 *I haven't yet tested this in every browser, but it should work as I haven't used any >ES5 functions.*
 
 ## Installation
-TODO
+Node: `npm install mirrorkey`
+Bower: TODO
+Browserify: TODO
+Webpack: TODO
 
 ## Developing
 
