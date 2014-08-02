@@ -46,7 +46,7 @@ module.exports = function(obj, transformType) {
 		transformType = 'none';
 	} else {
 		if (transformNames.indexOf(transformType) === -1) {
-			throw 'Unknown value for transformType.'; // TODO: list possible transforms
+			throw 'Unknown value for transformType. Valid values: ' + transformNames.join(', ');
 		}
 	}
 

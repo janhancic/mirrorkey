@@ -12,7 +12,7 @@ describe('MirrorKey', function() {
 	it('throws an exception if transformType is unknown', function() {
 		expect(function() {
 			mirrorKey({}, '404-transform');
-		}).toThrow('Unknown value for transformType.');
+		}).toThrow('Unknown value for transformType. Valid values: none, camel-case, lower-case, dashed, lower-dashed');
 	});
 
 	it('returns an empty object if the argument is an empty object', function() {
