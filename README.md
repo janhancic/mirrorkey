@@ -33,6 +33,20 @@ mirrorKey(myConstants, 'lower-dashed');
 */
 ```
 
+You can also pass in an array instead of an object:
+
+```javascript
+mirrorKey(['MY_FOO', 'MY_BAR']);
+/*
+{
+	MY_FOO: 'MY_FOO',
+	MY_BAR: 'MY_BAR'
+}
+*/
+
+// you can also use transforms as above if you pass in an array
+```
+
 ## Runtime support
 Works in [node.js](http://nodejs.org/) and in the browser.
 

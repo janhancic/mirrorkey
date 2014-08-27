@@ -1,6 +1,15 @@
 (function(){
 'use strict';
 
+var isArray;
+if (typeof Array.isArray === 'undefined') {
+	isArray = function (arg) {
+		return Object.prototype.toString.call(arg) === '[object Array]';
+	};
+} else {
+	isArray = Array.isArray;
+}
+
 var transforms = {
 	'none': function(key) {
 		return key;
@@ -17,7 +26,7 @@ var transforms = {
 			parts[idx] = part;
 		}
 
-		return parts.join("");
+		return parts.join('');
 	},
 
 	'lower-case': function(key) {
@@ -39,8 +48,10 @@ for (var transformName in transforms) {
 }
 
 window.mirrorkey = function(obj, transformType) {
-	if (obj === null || typeof obj !== 'object') {
-		throw 'The first argument to mirrorKey must be a object.';
+	var objIsArray = isArray(obj);
+
+	if (obj === null || (typeof obj !== 'object' && objIsArray === false)) {
+		throw 'The first argument to mirrorKey must be a object or an array.';
 	}
 
 	if (typeof transformType === 'undefined') {
@@ -53,12 +64,18 @@ window.mirrorkey = function(obj, transformType) {
 
 	var result = {};
 
-	for (var key in obj) {
-		if (obj.hasOwnProperty(key) === false) {
-			continue;
-		}
+	if (objIsArray === false) {
+		for (var key in obj) {
+			if (obj.hasOwnProperty(key) === false) {
+				continue;
+			}
 
-		result[key] = transforms[transformType](key);
+			result[key] = transforms[transformType](key);
+		}
+	} else {
+		for (var idx = 0, len = obj.length; idx < len; idx++) {
+			result[obj[idx]] = transforms[transformType](obj[idx]);
+		}
 	}
 
 	return result;
