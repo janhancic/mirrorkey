@@ -73,7 +73,7 @@ module.exports = function(obj, transformType) {
 		}
 	} else {
 		for (var idx = 0, len = obj.length; idx < len; idx++) {
-			result[obj[idx]] = obj[idx];
+			result[obj[idx]] = transforms[transformType](obj[idx]);
 		}
 	}
 
