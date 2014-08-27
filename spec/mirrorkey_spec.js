@@ -1,11 +1,19 @@
 var mirrorKey = require('../mirrorkey');
 
 describe('MirrorKey', function() {
-	it('throws an exception if the passed in argument is not an object', function() {
-		var errorMsg = 'The first argument to mirrorKey must be a object.';
+	it('throws an exception if the passed in argument is not an object or an array', function() {
+		var errorMsg = 'The first argument to mirrorKey must be a object or an array.';
 
 		expect(function() {
 			mirrorKey(null);
+		}).toThrow(errorMsg);
+
+		expect(function() {
+			mirrorKey(1);
+		}).toThrow(errorMsg);
+
+		expect(function() {
+			mirrorKey('bob');
 		}).toThrow(errorMsg);
 	});
 
@@ -17,6 +25,12 @@ describe('MirrorKey', function() {
 
 	it('returns an empty object if the argument is an empty object', function() {
 		var result = mirrorKey({});
+
+		expect(Object.keys(result).length).toEqual(0);
+	});
+
+	it('returns an empty object if the argument is an empty array', function() {
+		var result = mirrorKey([]);
 
 		expect(Object.keys(result).length).toEqual(0);
 	});

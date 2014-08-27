@@ -1,5 +1,14 @@
 'use strict';
 
+var isArray;
+if (typeof Array.isArray === 'undefined') {
+	isArray = function (arg) {
+		return Object.prototype.toString.call(arg) === '[object Array]';
+	};
+} else {
+	isArray = Array.isArray;
+}
+
 var transforms = {
 	'none': function(key) {
 		return key;
@@ -38,8 +47,8 @@ for (var transformName in transforms) {
 }
 
 module.exports = function(obj, transformType) {
-	if (obj === null || typeof obj !== 'object') {
-		throw 'The first argument to mirrorKey must be a object.';
+	if (obj === null || (typeof obj !== 'object' && isArray(obj) === false)) {
+		throw 'The first argument to mirrorKey must be a object or an array.';
 	}
 
 	if (typeof transformType === 'undefined') {
