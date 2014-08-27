@@ -57,18 +57,14 @@ describe('MirrorKey', function() {
 
 	it('adds values in camel-case', function() {
 		var result = mirrorKey(
-			{
-				MY_KEY1: null
-			},
+			{MY_KEY1: null},
 			'camel-case'
 		);
 
 		expect(result.MY_KEY1).toEqual('MyKey1');
 
 		result = mirrorKey(
-			[
-				'MY_KEY1'
-			],
+			['MY_KEY1'],
 			'camel-case'
 		);
 
@@ -77,18 +73,14 @@ describe('MirrorKey', function() {
 
 	it('adds values in lower-case', function() {
 		var result = mirrorKey(
-			{
-				MY_KEY1: null
-			},
+			{MY_KEY1: null},
 			'lower-case'
 		);
 
 		expect(result.MY_KEY1).toEqual('my_key1');
 
 		result = mirrorKey(
-			[
-				'MY_KEY1'
-			],
+			['MY_KEY1'],
 			'lower-case'
 		);
 
@@ -97,18 +89,14 @@ describe('MirrorKey', function() {
 
 	it('adds values in dashed', function() {
 		var result = mirrorKey(
-			{
-				MY_KEY1: null
-			},
+			{MY_KEY1: null},
 			'dashed'
 		);
 
 		expect(result.MY_KEY1).toEqual('MY-KEY1');
 
 		result = mirrorKey(
-			[
-				'MY_KEY1'
-			],
+			['MY_KEY1'],
 			'dashed'
 		);
 
@@ -117,18 +105,14 @@ describe('MirrorKey', function() {
 
 	it('adds values in lower-dashed', function() {
 		var result = mirrorKey(
-			{
-				MY_KEY1: null
-			},
+			{MY_KEY1: null},
 			'lower-dashed'
 		);
 
 		expect(result.MY_KEY1).toEqual('my-key1');
 
 		result = mirrorKey(
-			[
-				'MY_KEY1'
-			],
+			['MY_KEY1'],
 			'lower-dashed'
 		);
 
