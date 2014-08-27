@@ -47,7 +47,9 @@ for (var transformName in transforms) {
 }
 
 module.exports = function(obj, transformType) {
-	if (obj === null || (typeof obj !== 'object' && isArray(obj) === false)) {
+	var objIsArray = isArray(obj);
+
+	if (obj === null || (typeof obj !== 'object' && objIsArray === false)) {
 		throw 'The first argument to mirrorKey must be a object or an array.';
 	}
 
@@ -61,12 +63,18 @@ module.exports = function(obj, transformType) {
 
 	var result = {};
 
-	for (var key in obj) {
-		if (obj.hasOwnProperty(key) === false) {
-			continue;
-		}
+	if (objIsArray === false) {
+		for (var key in obj) {
+			if (obj.hasOwnProperty(key) === false) {
+				continue;
+			}
 
-		result[key] = transforms[transformType](key);
+			result[key] = transforms[transformType](key);
+		}
+	} else {
+		for (var idx = 0, len = obj.length; idx < len; idx++) {
+			result[obj[idx]] = obj[idx];
+		}
 	}
 
 	return result;
