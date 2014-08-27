@@ -45,6 +45,16 @@ describe('MirrorKey', function() {
 		expect(result.MY_KEY2).toEqual('MY_KEY2');
 	});
 
+	it('adds values to each key (array)', function() {
+		var result = mirrorKey([
+			'MY_KEY1',
+			'MY_KEY2'
+		]);
+
+		expect(result.MY_KEY1).toEqual('MY_KEY1');
+		expect(result.MY_KEY2).toEqual('MY_KEY2');
+	});
+
 	it('adds values in camel-case', function() {
 		var result = mirrorKey(
 			{
