@@ -25,7 +25,7 @@ var transforms = {
 			parts[idx] = part;
 		}
 
-		return parts.join("");
+		return parts.join('');
 	},
 
 	'lower-case': function(key) {
